@@ -32,12 +32,39 @@ const topicNavigation = [...topics].find(
 console.log(topicNavigation);
 
 // 11 - додай для знайденого елемента data-topic="navigation" атрибут style і зроби його backgroundColor жовтим
+topicNavigation.style.backgroundColor = "yellow";
 // 12 - у елемента data-topic="navigation" знайди елемент р і зміни його текст на "Я змінив тут текст!".
+topicNavigation.lastElementChild.textContent = "Я змінив тут текст!";
 // 13 - створи const currentTopic = "manipulation"; після цього знайди елемент у якогоо атрибут data-topic має значення, яке зберігається у змінній currentTopic і виведи його в консоль;
+const currentTopic = "manipulation";
+const topicManipulation = document.querySelector(
+  `[data-topic = ${currentTopic}]`,
+);
+console.log(topicManipulation);
 // 14 - додай до знайденого елемента атрибут style і зроби його backgroundColor блакитним;
+topicManipulation.style.backgroundColor = "azure";
 // 15 - знайти в документі заголовок, який має class="completed" і виведи його в консоль;
+const completedTitle = [...titles].find((title) =>
+  title.classList.contains("completed"),
+);
+console.log(completedTitle);
 // 16 - видали елемент li в якому знаходиться заголовок, який має class="completed"
+// completedTitle.parentElement.remove();
+document.querySelector("li>h3.completed").remove();
 // 17 - після заголовка h1 (перед списком) додай новий елемент p і задай йому наступний текст: "Об'єктна модель документа (Document Object Model)"
+const markup = `<p>Об'єктна модель документа (Document Object Model)</p>`;
+titleEl.insertAdjacentHTML("afterend", markup);
 // 18 - додай новий елемент списку у кінець списка, його заголовок це - "Властивість innerHTML" а опис (р) - "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу". тобто, потрібно створити елемент LI потім наповнити H3 та P і готову LI закинути у кінець списку
+const markup2 = `<li data-topic="manipulation">
+        <h3>Створення та видалення елементів</h3>
+        <p>
+          DOM API дозволяє не тільки вибирати або змінювати вже існуючі, але й
+          видаляти, а також створювати нові елементи, після чого додавати їх в
+          документ.
+        </p>
+      </li>`;
+
 // 19 - зроби це саме, але використовуй шаблонні рядки та метод insertAdjacentHTML()
+listEl.insertAdjacentHTML("beforeend", markup2);
 // 20 - очисти список
+listEl.innerHTML = "";
