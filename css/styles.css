@@ -96,11 +96,11 @@ ul {
 }
 
 .success {
-  outline: 3px solid greenyellow;
+  border: 3px solid greenyellow;
 }
 
 .error {
-  outline: 3px solid red;
+  border: 3px solid red;
 }
 
 span {
